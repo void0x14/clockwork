@@ -155,9 +155,19 @@ class GeminiProvider(AIProvider):
         except ImportError:
             raise ImportError("pip install google-generativeai")
         genai.configure(api_key=cfg["api_key"])
+
+        generation_config: Dict = {}
+        thinking_level = cfg.get("thinking_level")
+        if thinking_level:
+            generation_config["thinking_config"] = {
+                "thinking_level": thinking_level,
+                "include_thoughts": cfg.get("include_thoughts", False),
+            }
+
         self._model = genai.GenerativeModel(
-            model_name=cfg.get("model", "gemini-1.5-pro"),
+            model_name=cfg.get("model", "gemini-3.5-flash"),
             system_instruction=_SYSTEM_PROMPT,
+            generation_config=generation_config or None,
         )
 
     def generate(self, title: str, transcript: str, duration: str = "") -> str:

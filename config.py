@@ -20,7 +20,8 @@ _DEFAULTS: dict = {
         "providers": {
             "anthropic":       {"api_key": "", "model": "claude-sonnet-4-20250514"},
             "openai":          {"api_key": "", "model": "gpt-4o"},
-            "gemini":          {"api_key": "", "model": "gemini-1.5-pro"},
+            "gemini":          {"api_key": "", "model": "gemini-3.5-flash",
+                                "thinking_level": "HIGH", "include_thoughts": False},
             "groq":            {"api_key": "", "model": "llama-3.3-70b-versatile",
                                 "base_url": "https://api.groq.com/openai/v1"},
             "together":        {"api_key": "", "model": "",
