@@ -38,6 +38,8 @@ pip install -r requirements.txt
 
 İlk çalıştırmada tarayıcı açılır, Google hesabınızla giriş yaparsınız. Token otomatik kaydedilir.
 
+Ek olarak eğer uyarı alırsanız,publish durumdan test durumuna alın ve kendi mailinizi ekleyin.Bu şekilde izin sorunu çözülür.
+
 ---
 
 ## Yapılandırma
