@@ -1,3 +1,6 @@
+#Ai editor files
+.opencode/
+
 config.yaml
 client_secrets.json
 
