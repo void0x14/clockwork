@@ -19,7 +19,7 @@ macOS: `brew install ffmpeg` | Ubuntu: `sudo apt install ffmpeg`
 ## Kurulum
 
 ```bash
-git clone [<repo>](https://github.com/void0x14/clockwork)
+git clone https://github.com/void0x14/clockwork
 cd ytchapters
 pip install -r requirements.txt
 ```
