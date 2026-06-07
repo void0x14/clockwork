@@ -20,7 +20,6 @@ macOS: `brew install ffmpeg` | Ubuntu: `sudo apt install ffmpeg`
 
 ```bash
 git clone https://github.com/void0x14/clockwork
-cd ytchapters
 pip install -r requirements.txt
 ```
 
