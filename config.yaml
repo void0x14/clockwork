@@ -9,7 +9,7 @@ subtitle:
   prefer_manual: true                            # Prefer human-made subs over auto-generated
 
 ai:
-  default_provider: "anthropic"                 # anthropic | openai | gemini | groq | together | ollama | lmstudio | openai_compatible
+  default_provider: "gemini"                 # anthropic | openai | gemini | groq | together | ollama | lmstudio | openai_compatible
 
   providers:
     anthropic:
@@ -22,7 +22,9 @@ ai:
 
     gemini:
       api_key: ""
-      model: "gemini-1.5-pro"
+      model: "gemini-3.5-flash"
+      thinking_level: "HIGH"          # MINIMAL | LOW | MEDIUM | HIGH
+      include_thoughts: false
 
     groq:                                        # OpenAI-compatible, very fast
       api_key: ""
