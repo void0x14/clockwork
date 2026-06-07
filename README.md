@@ -1,4 +1,4 @@
-# ytchapters — YouTube Otomatik Bölüm Zaman Damgası Üretici
+# Clockwork — YouTube Otomatik Bölüm Zaman Damgası Üretici
 
 Kanalınızdaki videoların altyazılarını (.srt) indirir, AI ile zaman damgası üretir ve video açıklamalarına otomatik olarak ekler.
 
