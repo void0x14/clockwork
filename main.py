@@ -63,8 +63,8 @@ def _iso_duration_to_str(iso: str) -> str:
 # ─────────────────────────────────────────── cmd: auth ────────────────────────
 
 def cmd_auth(args: argparse.Namespace) -> None:
-    from src.config import Config
-    from src.youtube_api import YouTubeAPI
+    from config import Config
+    from youtube_api import YouTubeAPI
 
     cfg = Config(args.config)
     api = YouTubeAPI(
@@ -82,8 +82,8 @@ def cmd_auth(args: argparse.Namespace) -> None:
 # ─────────────────────────────────────────── cmd: download ────────────────────
 
 def cmd_download(args: argparse.Namespace) -> None:
-    from src.config import Config
-    from src.downloader import SubtitleDownloader
+    from config import Config
+    from downloader import SubtitleDownloader
 
     cfg = Config(args.config)
     channel_url = args.channel or cfg.get("youtube", "channel_url")
@@ -126,8 +126,8 @@ def cmd_download(args: argparse.Namespace) -> None:
 # ─────────────────────────────────────────── cmd: generate ────────────────────
 
 def cmd_generate(args: argparse.Namespace) -> None:
-    from src.config import Config
-    from src.srt_utils import (
+    from config import Config
+    from srt_utils import (
         parse_srt,
         to_ai_transcript,
         parse_ai_timestamps,
@@ -135,7 +135,7 @@ def cmd_generate(args: argparse.Namespace) -> None:
         format_chapter_block,
         inject_into_description,
     )
-    from src.ai_providers import get_provider
+    from ai_providers import get_provider
 
     cfg           = Config(args.config)
     provider_name = args.provider or cfg.get("ai", "default_provider")
@@ -167,8 +167,8 @@ def cmd_generate(args: argparse.Namespace) -> None:
 
     # Optionally update a video description
     if args.update:
-        from src.config import Config
-        from src.youtube_api import YouTubeAPI
+        from config import Config
+        from youtube_api import YouTubeAPI
 
         console.print(f"\nAçıklama güncelleniyor: [cyan]{args.update}[/cyan]…")
         yt = YouTubeAPI(
@@ -191,10 +191,10 @@ def cmd_generate(args: argparse.Namespace) -> None:
 # ─────────────────────────────────────────── cmd: auto ────────────────────────
 
 def cmd_auto(args: argparse.Namespace) -> None:
-    from src.config import Config
-    from src.youtube_api import YouTubeAPI
-    from src.downloader import SubtitleDownloader
-    from src.srt_utils import (
+    from config import Config
+    from youtube_api import YouTubeAPI
+    from downloader import SubtitleDownloader
+    from srt_utils import (
         parse_srt,
         to_ai_transcript,
         parse_ai_timestamps,
@@ -202,7 +202,7 @@ def cmd_auto(args: argparse.Namespace) -> None:
         inject_into_description,
         format_chapter_block,
     )
-    from src.ai_providers import get_provider
+    from ai_providers import get_provider
 
     cfg = Config(args.config)
 
