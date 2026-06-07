@@ -1,0 +1,14 @@
+# Core
+yt-dlp>=2024.1.0
+google-api-python-client>=2.120.0
+google-auth-httplib2>=0.2.0
+google-auth-oauthlib>=1.2.0
+pyyaml>=6.0.2
+rich>=13.7.0
+httpx>=0.27.0
+
+# AI providers (install only what you use)
+anthropic>=0.40.0          # Claude
+openai>=1.50.0             # OpenAI + Groq + Together + LM Studio + any OpenAI-compat
+google-generativeai>=0.8.0 # Gemini
+# Ollama uses httpx (already listed above)

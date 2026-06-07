@@ -1,0 +1,59 @@
+youtube:
+  channel_url: "https://www.youtube.com/@void0x14"
+  client_secrets_file: "client_secrets.json"   # OAuth credentials from Google Cloud Console
+  token_file: "token.json"                       # Auto-created on first auth
+
+subtitle:
+  languages: ["tr", "tr-orig", "en", "en-orig"] # Priority order
+  output_dir: "./subtitles"
+  prefer_manual: true                            # Prefer human-made subs over auto-generated
+
+ai:
+  default_provider: "anthropic"                 # anthropic | openai | gemini | groq | together | ollama | lmstudio | openai_compatible
+
+  providers:
+    anthropic:
+      api_key: ""
+      model: "claude-sonnet-4-20250514"
+
+    openai:
+      api_key: ""
+      model: "gpt-4o"
+
+    gemini:
+      api_key: ""
+      model: "gemini-1.5-pro"
+
+    groq:                                        # OpenAI-compatible, very fast
+      api_key: ""
+      model: "llama-3.3-70b-versatile"
+      base_url: "https://api.groq.com/openai/v1"
+
+    together:
+      api_key: ""
+      model: "meta-llama/Llama-3.3-70B-Instruct-Turbo"
+      base_url: "https://api.together.xyz/v1"
+
+    ollama:                                      # Local model via Ollama
+      base_url: "http://localhost:11434"
+      model: "llama3.2:latest"
+
+    lmstudio:                                    # Local model via LM Studio
+      base_url: "http://localhost:1234/v1"
+      api_key: "lm-studio"
+      model: ""                                  # Leave empty to auto-detect loaded model
+
+    openai_compatible:                           # Any other OpenAI-compatible endpoint
+      base_url: ""
+      api_key: ""
+      model: ""
+
+processing:
+  skip_with_chapters: true       # Skip videos whose description already contains timestamps
+  save_srt: true                 # Save .srt files to subtitle.output_dir
+  save_timestamps: true          # Save generated .txt timestamps to timestamps_dir
+  timestamps_dir: "./timestamps"
+  state_file: "./state.json"     # Tracks processed/failed videos for resumption
+  delay_between_videos: 1.5      # Seconds between API calls (avoid rate limits)
+  max_retries: 3
+  dry_run: false                 # If true, print timestamps but don't update YouTube
